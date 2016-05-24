@@ -3,7 +3,9 @@ package rocketData;
 import java.io.Serializable;
 
 public class LoanRequest implements Serializable {
-
+	
+	private double Income;
+	private double Expenses;
 	private int iTerm;
 	private double dRate;
 	private double dAmount;
@@ -19,6 +21,18 @@ public class LoanRequest implements Serializable {
 	
 	public LoanRequest() {
 		super();
+	}
+	public double getIncome() {
+		return Income;
+	}
+	public void setIncome(double income) {
+		Income = income;
+	}
+	public double getExpenses() {
+		return Expenses;
+	}
+	public void setExpenses(double expenses) {
+		Expenses = expenses;
 	}
 	public int getiTerm() {
 		return iTerm;

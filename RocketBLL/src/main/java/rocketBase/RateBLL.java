@@ -12,8 +12,9 @@ public class RateBLL {
 
 	private static RateDAL _RateDAL = new RateDAL();
 	
-	static double getRate(int GivenCreditScore) 
+	public static double getRate(int GivenCreditScore) throws RateException 
 	{
+		// 
 		//TODO - RocketBLL RateBLL.getRate - make sure you throw any exception
 		
 		//		Call RateDAL.getAllRates... this returns an array of rates
@@ -29,17 +30,16 @@ public class RateBLL {
 			{
 				Interest = rate.getdInterestRate();
 			}
-			
-			if(Interest == 0.0)
-			{
-				throw new RateException("Rate missing for corresponding credit score. ");
+			/*if(Interest == 0){
+				
+				//throw new RateException("Missing Interest rate corresponding to credit score.");
 			}
+			*/
 			
-			return Interest;
 		}
-		
-		
-	}
+		return Interest;
+		}
+	
 	
 	
 	//TODO - RocketBLL RateBLL.getPayment 
